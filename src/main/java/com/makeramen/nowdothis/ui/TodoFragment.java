@@ -17,9 +17,11 @@ import com.makeramen.nowdothis.data.TodoStorage;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class TodoFragment extends Fragment {
 
+  @Inject @Named("Large") public int waterQuantity;
   @Inject TodoStorage todoStorage;
   @Inject Picasso picasso;
   private TextView itemText;

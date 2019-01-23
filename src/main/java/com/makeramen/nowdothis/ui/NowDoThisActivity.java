@@ -8,9 +8,12 @@ import com.makeramen.nowdothis.NowDoThisApp;
 import com.makeramen.nowdothis.data.TodoStorage;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class NowDoThisActivity extends Activity {
   @Inject TodoStorage todoStorage;
+  @Inject @Named("Medium") public int waterQuantity;
+
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

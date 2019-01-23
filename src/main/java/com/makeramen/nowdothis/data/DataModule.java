@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.gson.Gson;
 import com.makeramen.nowdothis.dagger.PerApp;
+
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -19,5 +22,18 @@ public class DataModule {
 
   @Provides @PerApp Gson provideGson() {
     return new Gson();
+  }
+
+  @Provides @Named("Small")
+  public int smallQuantity() {
+    return 10;
+  }
+  @Provides @Named("Medium")
+  public int mediumQuantity(){
+    return 20;
+  }
+  @Provides @Named("Large")
+  public int largeQuantity(){
+    return 30;
   }
 }
