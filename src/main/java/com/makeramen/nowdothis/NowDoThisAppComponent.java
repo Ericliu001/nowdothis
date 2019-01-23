@@ -1,7 +1,7 @@
 package com.makeramen.nowdothis;
 
 import android.app.Application;
-import android.net.NetworkRequest;
+
 import com.google.gson.Gson;
 import com.makeramen.nowdothis.dagger.PerApp;
 import com.makeramen.nowdothis.data.DataModule;
@@ -11,28 +11,32 @@ import com.makeramen.nowdothis.ui.NowDoThisActivity;
 import com.makeramen.nowdothis.ui.TodoFragment;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.Picasso;
+
 import dagger.Component;
 
 @PerApp
 @Component(
-    modules = {
-        NowDoThisModule.class,
-        DataModule.class,
-        NetworkModule.class
-    }
+        modules = {
+                NowDoThisModule.class,
+                DataModule.class,
+                NetworkModule.class
+        }
 )
 public interface NowDoThisAppComponent {
-  public void inject(NowDoThisActivity nowDoThisActivity);
 
-  public void inject(EditListFragment editListFragment);
+    SubComponent provideSubComponent();
 
-  public void inject(TodoFragment todoFragment);
+    public void inject(NowDoThisActivity nowDoThisActivity);
 
-  Application application();
+    public void inject(EditListFragment editListFragment);
 
-  Picasso picasso();
+    public void inject(TodoFragment todoFragment);
 
-  Gson gson();
+    Application application();
 
-  OkHttpClient okHttpClient();
+    Picasso picasso();
+
+    Gson gson();
+
+    OkHttpClient okHttpClient();
 }
