@@ -6,11 +6,13 @@ import com.squareup.okhttp.OkHttpClient;
 
 import dagger.Subcomponent;
 
-@Subcomponent
+@Subcomponent(modules = WaterModule.class)
 public interface SubComponent {
     void inject(ConsumerOfSubComponent consumerOfSubComponent);
 
     Gson gson();
 
     OkHttpClient okHttpClient();
+
+    String water();
 }
