@@ -2,6 +2,7 @@ package com.makeramen.nowdothis;
 
 import com.google.gson.Gson;
 import com.makeramen.nowdothis.ui.ConsumerOfDependentComponent;
+import com.makeramen.nowdothis.ui.EditListFragment;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.lang.annotation.Retention;
@@ -22,7 +23,8 @@ public interface DependentComponent {
 
     OkHttpClient okHttpClient();
 
-    String water();
+    Water water();
+
 
     @Scope
     @Retention(CLASS)

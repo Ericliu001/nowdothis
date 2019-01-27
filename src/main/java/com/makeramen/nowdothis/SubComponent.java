@@ -14,5 +14,5 @@ public interface SubComponent {
 
     OkHttpClient okHttpClient();
 
-    String water();
+    Water water();
 }

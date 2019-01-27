@@ -19,6 +19,8 @@ public class NowDoThisActivity extends Activity {
     super.onCreate(savedInstanceState);
 
     NowDoThisApp.getComponent(this).inject(this);
+    NowDoThisApp.getDependentComponent(this).inject(new ConsumerOfDependentComponent());
+    NowDoThisApp.getSubComponent(this).inject(new ConsumerOfSubComponent());
 
     if (getFragmentManager().findFragmentById(android.R.id.content) == null) {
       Fragment fragment = todoStorage.getTodos().length > 0
